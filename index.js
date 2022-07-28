@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
-const db = require("./db");
+const db = require("./connection");
+const mysql = require("mysql");
 
 // Initial prompt
 
