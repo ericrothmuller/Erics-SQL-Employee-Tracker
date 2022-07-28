@@ -4,6 +4,7 @@ const mysql = require("mysql");
 const db = mysql.createConnection(
     {
       host: 'localhost',
+      port: 3306,
       user: 'root',
       password: 'password',
       database: 'employees_db'
@@ -11,4 +12,4 @@ const db = mysql.createConnection(
     console.log(`Connected to the employees_db database.`)
   );
 
-  exports.db = db
+  module.exports = db;

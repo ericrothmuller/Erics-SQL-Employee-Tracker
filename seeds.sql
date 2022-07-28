@@ -1,3 +1,5 @@
+USE employees_db;
+
 INSERT INTO department (id, department)
 VALUES (001, "Web Design"),
        (002, "Finance"),
