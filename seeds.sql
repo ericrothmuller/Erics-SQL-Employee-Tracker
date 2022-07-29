@@ -7,7 +7,7 @@ VALUES (001, "Web Design"),
        (004, "SEO"),
        (005, "Sales");
 
-INSERT INTO roles (id, title, department, salary)
+INSERT INTO role (id, title, department, salary)
 VALUES (001, "Web Design Manager", "Web Design", "150000"),
        (002, "Account Manager", "Finance", "150000"),
        (003, "Advertising Manager", "Advertising", "150000"),
@@ -20,7 +20,7 @@ VALUES (001, "Web Design Manager", "Web Design", "150000"),
        (010, "Ad Copy Writer", "Advertising", "55000"),
        (011, "SEO Setup", "SEO", "50000");
 
-INSERT INTO employees (id, first_name, last_name, title, department, salary, manager)
+INSERT INTO employee (id, first_name, last_name, title, department, salary, manager)
 VALUES (001, "Eric", "Rothmuller", "Web Design Manager", "Web Design", "150000", "null"),
        (002, "Liou", "Chao", "Account Manager", "Finance", "150000", "null"),
        (003, "Mathew", "Evans", "Advertising Manager", "Advertising", "150000", "null"),
