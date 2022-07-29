@@ -35,8 +35,9 @@ What things you need to install the software and how to install them.
 - [Console.Table] (https://www.npmjs.com/package/console.table)
 - [MySQL2] (https://www.npmjs.com/package/mysql2)
 
-## Screen Shot
+## Video and Screen Shot
 
+- [Watch the demo video of the application](https://www.youtube.com/watch?v=Y0vdVIXE1zM)
 - [See the Application's Screen Shot](./Application-Screen-Shot.jpg)
 
 ## Seeing My Changes
