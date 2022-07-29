@@ -168,11 +168,87 @@ function addRole() {
 // Add Employee
 
 function addEmployee() {
-  console.log("This was ran");
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "What is the first name of the employee?",
+        name: "firstName",
+      },
+      {
+        type: "input",
+        message: "What is the last name of the employee?",
+        name: "lastName",
+      },
+      {
+        type: "input",
+        message: "What is the Role ID of the employee?",
+        name: "roleId",
+      },
+      {
+        type: "input",
+        message: "What is the manager ID of the employee?",
+        name: "managerId",
+      },
+    ])
+    .then((results) => {
+      var insertEmployee =
+        "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)";
+      db.query(
+        insertEmployee,
+        [
+          results.firstName,
+          results.lastName,
+          results.roleId,
+          results.managerId,
+        ],
+        () => {
+          console.log("Employee added");
+          whatToDo();
+        }
+      );
+    });
 }
 
 // Update Employee
 
 function updateEmployee() {
-  console.log("This was ran");
+  var employeesAll = "SELECT * FROM employee";
+
+  var employeeIds = [];
+
+  var allEmployees = [];
+
+  db.query(employeesAll, (err, results) => {
+    for (var i = 0; i < results.length; i++) {
+      allEmployees.push(results[i]);
+      employeeIds.push(allEmployees[i].id);
+    }
+
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          message: "What is the ID of the employee you'd like to edit?",
+          name: "employeeId",
+        },
+        {
+          type: "input",
+          message: "What is the new Role ID of the employee?",
+          name: "newRoleId",
+        },
+      ])
+      .then((results) => {
+        var updateEmployee = "UPDATE employee SET role_id = ? WHERE id = ?";
+
+        db.query(
+          updateEmployee,
+          [results.newRoleId, results.employeeId],
+          () => {
+            console.log("Employee updated");
+            whatToDo();
+          }
+        );
+      });
+  });
 }
