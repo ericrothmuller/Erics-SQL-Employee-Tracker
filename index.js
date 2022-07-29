@@ -1,6 +1,14 @@
 const inquirer = require("inquirer");
+const mysql = require('mysql2');
+const cTable = require("console.table");
 const db = require("./connection");
-const mysql = require("mysql");
+
+// Starts Connection
+
+db.connect(function (err) {
+    if (err) throw err;
+    whatToDo();
+});
 
 // Initial prompt
 
@@ -37,19 +45,40 @@ function whatToDo() {
 // View Departments
 
 function viewDepartments() {
-    console.log("This was ran");
+    db.query("SELECT * from department;", (err, table) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.table("All Departments:", table);
+          whatToDo();
+        }
+      });
 }
 
 // View Roles
 
 function viewRoles() {
-    console.log("This was ran");
+    db.query("SELECT * from role;", (err, table) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.table("All Roles:", table);
+          whatToDo();
+        }
+      });
 }
 
 // View Employees
 
 function viewEmployees() {
-    console.log("This was ran");
+    db.query("SELECT * from employee;", (err, table) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.table("All Employees:", table);
+          whatToDo();
+        }
+      });
 }
 
 // Add Department
@@ -75,6 +104,4 @@ function addEmployee() {
 function updateEmployee() {
     console.log("This was ran");
 }
-
-
 
