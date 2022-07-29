@@ -92,8 +92,7 @@ function addDepartment() {
         name: "departmentName",
     },
 ]).then((response) => {
-    const departmentName = response.departmentName;
-    db.query(`INSERT INTO department (name) VALUES(${departmentName})`);
+    db.query("INSERT INTO department (name) VALUES (?)", response.departmentName);
     console.log("Department added");
     whatToDo();
 });
