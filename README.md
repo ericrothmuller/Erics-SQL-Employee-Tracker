@@ -30,10 +30,10 @@ What things you need to install the software and how to install them.
 - [GitHub](https://github.com/)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [Node] (https://nodejs.org/en/)
-- [Inquirer] (https://www.npmjs.com/package/inquirer)
-- [Console.Table] (https://www.npmjs.com/package/console.table)
-- [MySQL2] (https://www.npmjs.com/package/mysql2)
+- [Node](https://nodejs.org/en/)
+- [Inquirer](https://www.npmjs.com/package/inquirer)
+- [Console.Table](https://www.npmjs.com/package/console.table)
+- [MySQL2](https://www.npmjs.com/package/mysql2)
 
 ## Video and Screen Shot
 
