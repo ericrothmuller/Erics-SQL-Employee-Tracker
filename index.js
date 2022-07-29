@@ -84,9 +84,20 @@ function viewEmployees() {
 // Add Department
 
 function addDepartment() {
-    console.log("This was ran");
+    inquirer
+    .prompt([
+    {
+        type: "input",
+        message: "What is the department name?",
+        name: "departmentName",
+    },
+]).then((response) => {
+    const departmentName = response.departmentName;
+    db.query(`INSERT INTO department (name) VALUES(${departmentName})`);
+    console.log("Department added");
+    whatToDo();
+});
 }
-
 // Add Role
 
 function addRole() {
