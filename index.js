@@ -27,6 +27,7 @@ function whatToDo() {
           "Add a role",
           "Add an employee",
           "Update an employee role",
+          "Quit",
         ],
       },
     ])
@@ -45,6 +46,8 @@ function whatToDo() {
         addEmployee();
       } else if (response.whatToDo === "Update an employee role") {
         updateEmployee();
+      } else if (response.whatToDo === "Quit") {
+        quit();
       }
     });
 }
@@ -251,4 +254,11 @@ function updateEmployee() {
         );
       });
   });
+}
+
+// Quits Prompt
+
+function quit() {
+  console.log("Thank you for using my application. Have a great day!");
+  db.end();
 }
