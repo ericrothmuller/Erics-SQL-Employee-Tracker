@@ -1,35 +1,36 @@
 USE employees_db;
 
-INSERT INTO department (id, department)
-VALUES (001, "Web Design"),
-       (002, "Finance"),
-       (003, "Advertising"),
-       (004, "SEO"),
-       (005, "Sales");
+INSERT INTO department (name)
+VALUES ("Web Design"),
+       ("Finance"),
+       ("Advertising"),
+       ("SEO"),
+       ("Sales");
 
-INSERT INTO role (id, title, department, salary)
-VALUES (001, "Web Design Manager", "Web Design", "150000"),
-       (002, "Account Manager", "Finance", "150000"),
-       (003, "Advertising Manager", "Advertising", "150000"),
-       (004, "SEO Manager", "SEO", "150000"),
-       (005, "Sales Manager", "Sales", "150000"),
-       (006, "Programmer", "Web Design", "120000"),
-       (007, "Web Designer", "Web Design", "65000"),
-       (008, "Accountant", "Finance", "80000"),
-       (009, "Ad Split Tester", "Advertising", "70000"),
-       (010, "Ad Copy Writer", "Advertising", "55000"),
-       (011, "SEO Setup", "SEO", "50000");
+INSERT INTO role (title, salary, department_id)
+VALUES ("Web Design Manager", "150000", "01"),
+       ("Account Manager", "150000", "02"),
+       ("Advertising Manager", "150000", "03"),
+       ("SEO Manager", "150000", "04"),
+       ("Sales Manager", "150000", "05"),
+       ("Salesperson", "100000", "05"),
+       ("Programmer", "120000", "01"),
+       ("Web Designer", "65000", "01"),
+       ("Accountant", "80000", "02"),
+       ("Ad Split Tester", "70000", "03"),
+       ("Ad Copy Writer", "55000", "03"),
+       ("SEO Setup", "50000", "04");
 
-INSERT INTO employee (id, first_name, last_name, title, department, salary, manager)
-VALUES (001, "Eric", "Rothmuller", "Web Design Manager", "Web Design", "150000", "null"),
-       (002, "Liou", "Chao", "Account Manager", "Finance", "150000", "null"),
-       (003, "Mathew", "Evans", "Advertising Manager", "Advertising", "150000", "null"),
-       (004, "Sean", "Haub", "SEO Manager", "SEO", "150000", "null"),
-       (005, "Justin", "Haub", "Web Designer", "Web Design", "65000", "Eric Rothmuller"),
-       (006, "Charlton", "DaSilva", "Ad Split Tester", "Advertising", "70000", "Mathew Evans"),
-       (007, "Rothtana", "Ouch", "Ad Copy Writer", "Advertising", "55000", "Mathew Evans"),
-       (008, "Chris", "Duke", "SEO Setup", "SEO", "50000", "Sean Haub"),
-       (009, "Robin", "Greyhorse", "Accountant", "Finance", "80000", "Liou Chao"),
-       (010, "Nick", "Leon", "Programmer", "Web Design", "120000", "Eric Rothmuller"),
-       (011, "Sarah", "Rothmuller", "Sales Manager", "Sales", "150000", "null"),
-       (012, "David", "Benn", "Salesperson", "Sales", "100000", "Sarah Rothmuller");
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Eric", "Rothmuller", "01", "1"),
+       ("Liou", "Chao", "02", "1"),
+       ("Mathew", "Evans", "03", "1"),
+       ("Sean", "Haub", "04", "1"),
+       ("Sarah", "Rothmuller", "05", "1"),
+       ("David", "Bell", "05", "5"),
+       ("Nick", "Leon", "01", "1"),
+       ("Justin", "Haub", "01", "1"),
+       ("Robin", "Greyhorse", "02", "2"),
+       ("Charlton", "DaSilva", "03", "3"),
+       ("Rothtana", "Ouch", "03", "3"),
+       ("Chris", "Duke", "04", "4");
